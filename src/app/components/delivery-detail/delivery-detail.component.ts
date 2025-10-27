@@ -224,7 +224,7 @@ import { User } from '../../models/user.model';
                   [(ngModel)]="actualDeliveryTimeInput"
                   name="actualDeliveryTime"
                   class="form-control"
-                  [value]="delivery?.actualDeliveryTime || ''"
+                  [value]="delivery.actualDeliveryTime || ''"
                 />
                 <div class="help-text">
                   Update the actual time when the delivery will be or was completed.

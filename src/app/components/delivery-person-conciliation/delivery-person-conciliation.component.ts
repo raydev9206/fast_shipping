@@ -143,11 +143,11 @@ import { AuthService } from '../../services/auth.service';
                   </div>
                   <div class="info-item">
                     <div class="info-label">Tu Ganancia (90%)</div>
-                    <div class="info-value text-success">\${{ (delivery.deliveryFee ?? 0 * 0.9)?.toFixed(2) }}</div>
+                    <div class="info-value text-success">\${{ (delivery.deliveryFee ?? 0 * 0.9).toFixed(2) }}</div>
                   </div>
                   <div class="info-item">
                     <div class="info-label">Comisión Plataforma (10%)</div>
-                    <div class="info-value text-warning">\${{ (delivery.deliveryFee ?? 0 * 0.1)?.toFixed(2) }}</div>
+                    <div class="info-value text-warning">\${{ (delivery.deliveryFee ?? 0 * 0.1).toFixed(2) }}</div>
                   </div>
                 </div>
 
