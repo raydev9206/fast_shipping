@@ -310,11 +310,9 @@ export class DeliveryService {
     this.http.get(`${this.apiUrl}/users`).subscribe({
       next: () => {
         this.useMockData = false;
-        console.log('JSON Server is available');
       },
       error: () => {
         this.useMockData = true;
-        console.warn('JSON Server not available, using mock data');
       }
     });
   }

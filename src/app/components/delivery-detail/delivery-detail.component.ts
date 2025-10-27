@@ -811,12 +811,9 @@ export class DeliveryDetailComponent implements OnInit {
   ngOnInit(): void {
     this.authService.currentUser$.subscribe(user => {
       this.currentUser = user;
-      console.log('Current user loaded:', user);
     });
 
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    console.log('Route param id:', this.route.snapshot.paramMap.get('id'));
-    console.log('Parsed ID:', id);
     if (id) {
       this.loadDelivery(id);
     } else {
@@ -829,10 +826,8 @@ export class DeliveryDetailComponent implements OnInit {
    * Load delivery details by ID
    */
   loadDelivery(id: number): void {
-    console.log('Loading delivery with ID:', id);
     this.deliveryService.getDelivery(id).subscribe({
       next: (delivery) => {
-        console.log('Successfully loaded delivery:', delivery);
         this.delivery = delivery;
         // Initialize the time input with current delivery time or empty string
         this.actualDeliveryTimeInput = delivery.actualDeliveryTime || '';

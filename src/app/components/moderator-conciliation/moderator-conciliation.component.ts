@@ -688,7 +688,6 @@ export class ModeratorConciliationComponent implements OnInit {
 
     this.deliveryService.reconcileDelivery(deliveryId, this.currentUser.id).subscribe({
       next: (updatedDelivery) => {
-        console.log('Delivery reconciled successfully:', updatedDelivery);
         this.loadData(); // Reload data to update UI
         this.isReconciling = false;
       },

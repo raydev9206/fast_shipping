@@ -60,11 +60,9 @@ export class AuthService {
     this.http.get(`${this.apiUrl}/users`).subscribe({
       next: () => {
         this.useMockData = false;
-        console.log('JSON Server is available for auth');
       },
       error: () => {
         this.useMockData = true;
-        console.warn('JSON Server not available for auth, using mock data');
       }
     });
   }

@@ -914,8 +914,6 @@ export class DeliveryListComponent implements OnInit {
           if (availableIndex !== -1) {
             this.deliveries[availableIndex] = updatedDelivery;
           }
-          // Show success message
-          console.log('Delivery completed successfully:', updatedDelivery);
         },
         error: (error) => {
           console.error("Error completing delivery:", error);
@@ -979,8 +977,6 @@ export class DeliveryListComponent implements OnInit {
           if (availableIndex !== -1) {
             this.deliveries[availableIndex] = updatedDelivery;
           }
-
-          console.log('Delivery reconciled successfully:', updatedDelivery);
         },
         error: (error) => {
           console.error('Error reconciling delivery:', error);
