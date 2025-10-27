@@ -116,23 +116,25 @@
       "pickupLocation": "Librería Técnica Universitaria - Campus Oeste",
       "deliveryLocation": "Residencias Estudiantiles Torre 3, Habitación 412",
       "estimatedDeliveryTime": "2025-10-28T10:30:00.000Z",
-      "actualDeliveryTime": null,
+      "actualDeliveryTime": "2025-10-27T16:44:32.252Z",
       "packageDetails": {
         "weight": "4.2kg",
         "dimensions": "30x25x15cm",
         "fragile": false,
         "value": "$180.00"
       },
-      "status": "available",
+      "status": "completed",
       "createdBy": 1,
-      "assignedTo": null,
+      "assignedTo": 2,
       "createdAt": "2025-10-27T09:00:00.000Z",
-      "startedAt": null,
-      "completedAt": null,
-      "evidenceImages": [],
-      "isReconciled": false,
-      "reconciledAt": null,
-      "reconciledBy": null,
+      "startedAt": "2025-10-27T16:43:56.150Z",
+      "completedAt": "2025-10-27T16:44:32.252Z",
+      "evidenceImages": [
+        "https://via.placeholder.com/300x200?text=photo_2025-10-07_13-46-09.jpg"
+      ],
+      "isReconciled": true,
+      "reconciledAt": "2025-10-27T16:45:24.530Z",
+      "reconciledBy": 1,
       "deliveryFee": 180
     },
     {
