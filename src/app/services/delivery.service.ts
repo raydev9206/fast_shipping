@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, catchError } from 'rxjs/operators';
 import { Delivery } from '../models/delivery.model';
 import { ConciliationSummary, DeliveryConciliation, ConciliationFilter } from '../models/conciliation.model';
 import { environment } from '../../environments/environment';
@@ -311,7 +311,7 @@ export class DeliveryService {
       next: () => {
         this.useMockData = false;
       },
-      error: () => {
+      error: (error) => {
         this.useMockData = true;
       }
     });
@@ -441,7 +441,21 @@ export class DeliveryService {
       );
       return of(myDeliveries);
     }
-    return this.http.get<Delivery[]>(`${this.apiUrl}/deliveries?assignedTo=${deliveryPersonId}&status=assigned,in_transit,completed`);
+
+    // First try a simple query without status filter
+    return this.http.get<Delivery[]>(`${this.apiUrl}/deliveries?assignedTo=${deliveryPersonId}`).pipe(
+      map(deliveries => {
+        // Filter by status on client side
+        const filteredDeliveries = deliveries.filter(d =>
+          d.status === 'assigned' || d.status === 'in_transit' || d.status === 'completed'
+        );
+        return filteredDeliveries;
+      }),
+      catchError((error: any) => {
+        console.error('🔍 getMyDeliveries error:', error);
+        return of([]);
+      })
+    );
   }
 
   /**

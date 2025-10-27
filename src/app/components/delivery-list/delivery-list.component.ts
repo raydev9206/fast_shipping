@@ -979,7 +979,7 @@ export class DeliveryListComponent implements OnInit {
           }
         },
         error: (error) => {
-          console.error('Error reconciling delivery:', error);
+          console.error('❌ Error reconciling delivery:', error);
         },
       });
     }
